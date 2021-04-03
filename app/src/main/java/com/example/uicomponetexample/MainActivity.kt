@@ -1,5 +1,6 @@
 package com.example.uicomponetexample
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -17,7 +18,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun initView() {
         binding.btnUIComponent.setOnClickListener {
-            Toast.makeText(this, "Hello", Toast.LENGTH_LONG).show()
+            val intent = Intent(this, UIComponentExample::class.java)
+            startActivity(intent)
+        }
+        binding.btnToast.setOnClickListener {
+            val toast = Toast.makeText(this,"hello", Toast.LENGTH_LONG)
+            toast.show()
+
         }
     }
 }
